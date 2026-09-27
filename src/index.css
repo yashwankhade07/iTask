@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#root{
+  width: 100%;
+  height: 100%;
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.main{
+  width: 50vw;
+  height: 90vh;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading{
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+  padding: 1vw;
+  background-color: rgb(95, 122, 160);
+  color: antiquewhite;
+}
+.searchBar{
+  width: 100%;
+  display: flex;
+  padding: 1vh;
+  gap: 1vh;
+  justify-content: center;
+  
+}
+.searchBar input{
+  width: 80%;
+  padding: 1vw;
+  background-color: rgb(205, 205, 210);
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+}
+.searchBar button{
+  padding: 1vw;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(137, 101, 170);
+  font-weight: 600;
+  color: white;
+}
+.complete-task{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+.complete-task button{
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  color: darkblue;
+  font-weight: 600;
+}
+.complete-task button:first-child{
+  background-color: rgb(56, 56, 120);
+  color: aliceblue;
+}
+
+.task-container{
+  width: 90%;
+  height: 65%;
+  padding:2vw;
+  background-color:rgb(205, 205, 210) ;
+  border-radius: 4vh;
+  display: flex;
+  gap: 1vw;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+  
+}
+.task{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+  background-color: rgb(177, 154, 201);
+  border-radius: 20px;
+}
+.task input{
+  width: 1.5vw;
+  height: 1.5vw;
+}
+.task span button{
+  padding: 10px 15px;
+  margin-right: 5px;
+  background-color: rgb(157, 63, 245);
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.add-form{
+  width: 20vw;
+  height: 20vh;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1vw;
+  border-radius: 10px;
+  padding: 2vw;
+
+}
+.add-form input{
+  padding: .5vw 1vw;
+  background-color: rgb(234, 227, 242);
+  border: none;
+  border-radius: 10px;
+}
+.add-form button{
+  padding: 10px 20px;
+  background-color: rgb(62, 223, 110);
+  border: none;
+  border-radius: 100px;
+}
+.add-form .x{
+  background-color: red;
+  color: white;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  font-size: larger;
+  font-weight: 700;
+}
