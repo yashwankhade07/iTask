@@ -186,6 +186,9 @@ html,body{
       width: 200px;
       gap: 20px;
     }
+    .add-form input{
+      padding: 10px;
+    }
     .task-container{
       border-radius: 10px;
       height: 78%;
@@ -220,7 +223,8 @@ html,body{
       gap: 30px;
     }
     .add-form input{
-      padding: 8px;
+      padding: 18px;
+      width: 90%;
     }
     .task-container{
       border-radius: 15px;
