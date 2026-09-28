@@ -52,7 +52,7 @@ html,body{
   padding: 1vw;
   background-color: rgb(205, 205, 210);
   border: none;
-  border-radius: 100px;
+  border-radius: 10px;
   font-size: 1rem;
 }
 .searchBar button{
@@ -65,7 +65,7 @@ html,body{
 }
 .complete-task{
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,9 +79,10 @@ html,body{
   color: darkblue;
   font-weight: 600;
 }
-.complete-task button:first-child{
+.complete-task button:hover{
   background-color: rgb(56, 56, 120);
   color: aliceblue;
+  transition: 0.5s all;
 }
 
 .task-container{
@@ -117,6 +118,9 @@ html,body{
   border: none;
   color: white;
   border-radius: 10px;
+}
+.task .h4{
+  text-transform: capitalize;
 }
 
 .add-form{
@@ -157,4 +161,80 @@ html,body{
   padding: 12px;
   font-size: larger;
   font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 575px) {
+    .main{
+      width: 98vw;
+      border-radius: 12px;
+    }
+    .heading{
+      font-size: 20px;
+    }
+    .searchBar input{
+      padding: 10px;
+      font-size: 14px;
+    }
+    .searchBar button{
+      font-size: 10px;
+      padding: 8px;
+    }
+    .add-form{
+      width: 200px;
+      gap: 20px;
+    }
+    .task-container{
+      border-radius: 10px;
+      height: 78%;
+    }
+    .task{
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .task input{
+      width: 30px;
+      height: 30px;
+    }
+}
+@media (min-width: 576px) and (max-width: 1023px) {
+    .main{
+      width: 98%;
+      border-radius: 15px;
+    }
+    .heading{
+      font-size: 25px;
+    }
+    .searchBar input{
+      padding: 12px;
+      font-size: 16px;
+    }
+    .searchBar button{
+      font-size: 15px;
+      padding: 12px;
+    }
+    .add-form{
+      width: 300px;
+      gap: 30px;
+    }
+    .add-form input{
+      padding: 8px;
+    }
+    .task-container{
+      border-radius: 15px;
+      height: 78%;
+    }
+    .task{
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .task input{
+      width: 30px;
+      height: 30px;
+    }
+    .task .h4{
+      font-size: 18px;
+    }
 }

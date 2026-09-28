@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './App.css'
 import SearchBar from './components/SearchBar'
 import TaskContainer from './components/TaskContainer'
@@ -7,18 +7,15 @@ import TaskContainer from './components/TaskContainer'
 function App() {
   const [inputValue, setInputValue] = useState('')
   const [SearchInput,setSearchInput]= useState('')
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      complete: false,
-      task: "run"
-    },
-    {
-      id: 2,
-      complete: true,
-      task: "learn"
-    },
-  ])
+  const [tasks, setTasks] = useState(() => {
+  const savedTasks = localStorage.getItem("tasks");
+
+  return savedTasks ? JSON.parse(savedTasks) : [];
+});
+
+useEffect(() => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
   const [displayTask, setDisplayTask] = useState(tasks)
   const [addForm, setAddForm] = useState(false)
   function displayForm() {
