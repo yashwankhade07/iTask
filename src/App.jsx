@@ -25,13 +25,8 @@ useEffect(() => {
   }
   const handleSearch=(e)=>{
     const searched = tasks.filter((task)=>task.task.toLowerCase().replaceAll(" ", "").includes(e.toLowerCase().replaceAll(" ", "")));
-    if (searched.length != 0) {
       setDisplayTask(searched)
       setSearchInput(e)
-    }
-    else{
-      setIsEmpty(true)
-    }
   }
   const handleInput=(e)=>{
     setInputValue(e.target.value)
