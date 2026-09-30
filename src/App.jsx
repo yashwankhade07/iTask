@@ -5,6 +5,8 @@ import SearchBar from './components/SearchBar'
 import TaskContainer from './components/TaskContainer'
 
 function App() {
+  const [clickDelete, setClickDelete] = useState(false);
+  const [getId, setGetId] = useState(null);
   const [inputValue, setInputValue] = useState('')
   const [SearchInput,setSearchInput]= useState('')
   const [tasks, setTasks] = useState(() => {
@@ -22,9 +24,14 @@ useEffect(() => {
     setAddForm(true)
   }
   const handleSearch=(e)=>{
-    const searched = tasks.filter((task)=>task.task.toLowerCase().replaceAll(" ", "").includes(e.toLowerCase().replaceAll(" ", "")))
-    setDisplayTask(searched)
-    setSearchInput(e)
+    const searched = tasks.filter((task)=>task.task.toLowerCase().replaceAll(" ", "").includes(e.toLowerCase().replaceAll(" ", "")));
+    if (searched.length != 0) {
+      setDisplayTask(searched)
+      setSearchInput(e)
+    }
+    else{
+      setIsEmpty(true)
+    }
   }
   const handleInput=(e)=>{
     setInputValue(e.target.value)
@@ -37,6 +44,7 @@ useEffect(() => {
       }]
       setTasks(updatedTask)
       setDisplayTask(updatedTask)
+      setInputValue('')
       setAddForm(false)
   }
   const deleteTask=(id)=>{
@@ -45,6 +53,7 @@ useEffect(() => {
   })
   setTasks(newTasks)
   setDisplayTask(newTasks)
+  setClickDelete(false)
 
   }
   const completedTasks = ()=>{
@@ -75,15 +84,24 @@ useEffect(() => {
           <button onClick={NotCompletedTasks}>Not Completed</button>
           <button onClick={completedTasks}>Completed</button>
         </div>
-        <TaskContainer data={displayTask} deletefunc={deleteTask} toggleTask={toggleTask}/>
+        <TaskContainer data={displayTask} setGetId={setGetId} toggleTask={toggleTask} setClickDelete = {setClickDelete}/>
       </div>
       {addForm && <div className="add-form">
-        <form action="" className="add-form">
+        <form action="" className="add-form" onSubmit={addTask}>
         <button className='x' onClick={()=>setAddForm(false)}>X</button>
         <input required type="text" placeholder='Add task' value={inputValue} onChange={handleInput}/>
         <button onClick={addTask}>ADD</button>
         </form>
       </div>}
+      {clickDelete && 
+      <div className='deleteTask'>
+        <h1>Are you sure ?</h1>
+        <span>
+          <button onClick={()=>deleteTask(getId)} style={{background:"rgb(157, 63, 245)"}}>Delete</button>
+          <button onClick={()=>setClickDelete(false)}>Cancel</button>
+        </span>
+      </div>
+      }
     </>
   )
 }

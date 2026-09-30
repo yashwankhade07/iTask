@@ -37,7 +37,7 @@ html,body{
   font-size: 2vw;
   padding: 1vw;
   background-color: rgb(95, 122, 160);
-  color: antiquewhite;
+  color:white;
 }
 .searchBar{
   width: 100%;
@@ -106,6 +106,7 @@ html,body{
   padding: 1vw;
   background-color: rgb(177, 154, 201);
   border-radius: 20px;
+  position: relative;
 }
 .task input{
   width: 1.5vw;
@@ -118,6 +119,8 @@ html,body{
   border: none;
   color: white;
   border-radius: 10px;
+  position: relative;
+  right: 0;
 }
 .task .h4{
   text-transform: capitalize;
@@ -165,6 +168,31 @@ html,body{
   top: 0;
   right: 0;
 }
+.deleteTask{
+  width: 30%;
+  height: 20%;
+  background-color: white;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
+  position: absolute;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.deleteTask span{
+  display: flex;
+  gap: 2vw;
+}
+.deleteTask h1{
+  font-size: 20px;
+}
+.deleteTask span button{
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: 1px solid rgb(197, 197, 197);
+}
 
 @media (max-width: 575px) {
     .main{
@@ -200,6 +228,10 @@ html,body{
     .task input{
       width: 30px;
       height: 30px;
+    }
+    .deleteTask{
+      width: 250px;
+      height: 120px;
     }
 }
 @media (min-width: 576px) and (max-width: 1023px) {
@@ -240,5 +272,9 @@ html,body{
     }
     .task .h4{
       font-size: 18px;
+    }
+    .deleteTask{
+      width: 50vw;
+      height: 150px;
     }
 }
